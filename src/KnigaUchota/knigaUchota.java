@@ -3,16 +3,17 @@ package KnigaUchota;
 import java.util.Arrays;
 
 public class knigaUchota {
-    public static void printAllArr(Employee[] arr) {   // Распечатать весь массив
-        for (Employee employee : arr) {
-            if (employee != null) {                     // Печатаем только заполненые строки массива
-                System.out.println(employee + " ");
-            }
+    private static void printAll() {
+        for (Employee employee : employees) {
+            System.out.println(employee);
         }
     }
 
+
+    private static Employee[] employees = new Employee[10];
+
     public static void main(String[] arr) {
-        Employee[] employees = new Employee[10];
+
         employees[0] = new Employee("Тванов", "Игорь", "Валерьевич",
                 1, 61600);
         employees[1] = new Employee("Хорошов", "Александор", "Семёнович",
@@ -34,12 +35,60 @@ public class knigaUchota {
         employees[9] = new Employee("Москвина", "Маргарита", "Семёновна",
                 5, 66700);
 
-
-        System.out.println(employees[5]);
-        printAllArr(employees);
+        printAll();
+        System.out.println("Сумма затрат на зарплату: " + sumSalary());
+        minSalary();
+        maxSalary();
+        System.out.println("Седная трата на зарплату: " + averageSalary());
+        personalNaem();
 
 
     }
 
+    static int sumSalary() {
+        int sum = 0;
+        for (Employee employee : employees) {
+            sum += employee.getSalary();
+        }
+        return sum;
+    }
 
+    private static void maxSalary() {
+        int max = 1;
+        int workerMax = 0;
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i].getSalary() > max) {
+                max = employees[i].getSalary();
+                workerMax = i;
+            }
+        }
+        System.out.println("Сотрудник с максимальной зарплатой: " + employees[workerMax]);
+
+    }
+
+    private static void minSalary() {
+        int min = 200000;
+        int worker = 0;
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i].getSalary() < min) {
+                min = employees[i].getSalary();
+                worker = i;
+            }
+        }
+        System.out.println("Сотрудник с минимальной зарплатой: " + employees[worker]);
+
+    }
+
+    private static float averageSalary() {
+        return (float) sumSalary() / employees.length;
+    }
+
+    static void personalNaem() {
+        for (Employee employee : employees) {
+            System.out.println(employee.getSurname() + " " + employee.getName() + " " + employee.getPatronymic());
+
+        }
+    }
 }
+
+
