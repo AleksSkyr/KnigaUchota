@@ -52,22 +52,22 @@ public class knigaUchota {
         return sum;
     }
 
-    private static int maxSalary() {
-        int max = employees[0].getSalary();
+    private static Employee maxSalary() {
+        Employee max = employees[0];
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getSalary() > max) {
-                max = employees[i].getSalary();
+            if (employees[i].getSalary() > max.getSalary()) {
+                max = employees[i];
             }
         }
-
+        System.out.println("Сотрудник с максимальной зарплатой: " + max);
         return max;
     }
 
-    private static int minSalary() {
-        int min = employees[0].getSalary();
+    private static Employee minSalary() {
+        Employee min = employees[0];
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getSalary() < min) {
-                min = employees[i].getSalary();
+            if (employees[i].getSalary() < min.getSalary()) {
+                min = employees[i];
             }
         }
         System.out.println("Сотрудник с минимальной зарплатой: " + min);
