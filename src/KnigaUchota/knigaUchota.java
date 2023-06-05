@@ -14,33 +14,33 @@ public class knigaUchota {
 
     public static void main(String[] arr) {
 
-        employees[0] = new Employee("Тванов", "Игорь", "Валерьевич",
+        employees[0] = new Employee("Тванов Игорь Валерьевич",
                 1, 61600);
-        employees[1] = new Employee("Хорошов", "Александор", "Семёнович",
+        employees[1] = new Employee("Хорошов Александор Семёнович",
                 1, 67500);
-        employees[2] = new Employee("Петрова", "Александра", "Михайлович",
+        employees[2] = new Employee("Петрова Александра Михайлович",
                 2, 62500);
-        employees[3] = new Employee("Твардовский", "Павел", "Игоревич",
+        employees[3] = new Employee("Твардовский Павел Игоревич",
                 2, 66900);
-        employees[4] = new Employee("Носов", "Александор", "Павлович",
+        employees[4] = new Employee("Носов Александор Павлович",
                 3, 65500);
-        employees[5] = new Employee("Утятин", "Сергей", "Петрович",
+        employees[5] = new Employee("Утятин Сергей Петрович",
                 3, 55500);
-        employees[6] = new Employee("Малинников", "Андрей", "Юрьевич",
+        employees[6] = new Employee("Малинников Андрей Юрьевич",
                 4, 51400);
-        employees[7] = new Employee("Митрохин", "Алексей", "Петрович",
+        employees[7] = new Employee("Митрохин Алексей Петрович",
                 4, 53400);
-        employees[8] = new Employee("Сегоглазова", "Анастасия", "Валерьевич",
+        employees[8] = new Employee("Сегоглазова Анастасия Валерьевич",
                 5, 45700);
-        employees[9] = new Employee("Москвина", "Маргарита", "Семёновна",
+        employees[9] = new Employee("Москвина Маргарита Семёновна",
                 5, 66700);
 
         printAll();
         System.out.println("Сумма затрат на зарплату: " + sumSalary());
         minSalary();
         maxSalary();
-        System.out.println("Седная трата на зарплату: " + averageSalary());
-        personalNaem();
+        System.out.println("Средная трата на зарплату: " + averageSalary());
+        personalName();
 
 
     }
@@ -54,7 +54,7 @@ public class knigaUchota {
     }
 
     private static void maxSalary() {
-        int max = 1;
+        int max = employees[0].getSalary();
         int workerMax = 0;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i].getSalary() > max) {
@@ -67,7 +67,7 @@ public class knigaUchota {
     }
 
     private static void minSalary() {
-        int min = 200000;
+        int min = employees[0].getSalary();
         int worker = 0;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i].getSalary() < min) {
@@ -83,9 +83,9 @@ public class knigaUchota {
         return (float) sumSalary() / employees.length;
     }
 
-    static void personalNaem() {
+    static void personalName() {
         for (Employee employee : employees) {
-            System.out.println(employee.getSurname() + " " + employee.getName() + " " + employee.getPatronymic());
+            System.out.println(employee.getFio());
 
         }
     }
