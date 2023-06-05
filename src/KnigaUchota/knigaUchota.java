@@ -1,7 +1,5 @@
 package KnigaUchota;
 
-import java.util.Arrays;
-
 public class knigaUchota {
     private static void printAll() {
         for (Employee employee : employees) {
@@ -43,6 +41,7 @@ public class knigaUchota {
         personalName();
 
 
+
     }
 
     static int sumSalary() {
@@ -53,30 +52,27 @@ public class knigaUchota {
         return sum;
     }
 
-    private static void maxSalary() {
+    private static int maxSalary() {
         int max = employees[0].getSalary();
-        int workerMax = 0;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i].getSalary() > max) {
                 max = employees[i].getSalary();
-                workerMax = i;
             }
         }
-        System.out.println("Сотрудник с максимальной зарплатой: " + employees[workerMax]);
 
+        return max;
     }
 
-    private static void minSalary() {
+    private static int minSalary() {
         int min = employees[0].getSalary();
-        int worker = 0;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i].getSalary() < min) {
                 min = employees[i].getSalary();
-                worker = i;
             }
         }
-        System.out.println("Сотрудник с минимальной зарплатой: " + employees[worker]);
+        System.out.println("Сотрудник с минимальной зарплатой: " + min);
 
+        return min;
     }
 
     private static float averageSalary() {

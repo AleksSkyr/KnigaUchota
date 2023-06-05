@@ -3,14 +3,14 @@ package KnigaUchota;
 
 public class Employee {
     private int id;
-    public String Fio;
+    public String fio;
     public int departament;
     public int salary;
     private static int idCounter;
 
 
-    public Employee(String Fio, int departament, int salary) {
-        this.Fio = Fio;
+    public Employee(String fio, int departament, int salary) {
+        this.fio = fio;
         if (departament > 0 && departament < 6) {
             this.departament = departament;
         } else {
@@ -28,7 +28,7 @@ public class Employee {
 
 
     public String getFio() {
-        return Fio;
+        return fio;
     }
 
     public int getDepartament() {
@@ -50,7 +50,7 @@ public class Employee {
     @Override
     public String toString() {
         return "Сотрудник: " +
-                "id=" + id + ". Ф.И.О.: " + Fio + ' ' +
+                "id=" + id + ". Ф.И.О.: " + fio + ' ' +
                 ". Отдел:" + departament +". Зарплата: " + salary;
     }
 }
