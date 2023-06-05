@@ -42,6 +42,7 @@ public class knigaUchota {
 
 
 
+
     }
 
     static int sumSalary() {
@@ -63,6 +64,7 @@ public class knigaUchota {
         return max;
     }
 
+
     private static Employee minSalary() {
         Employee min = employees[0];
         for (int i = 0; i < employees.length; i++) {
@@ -71,7 +73,6 @@ public class knigaUchota {
             }
         }
         System.out.println("Сотрудник с минимальной зарплатой: " + min);
-
         return min;
     }
 
