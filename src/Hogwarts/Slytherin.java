@@ -1,14 +1,14 @@
 package Hogwarts;
 
-public class Slytherin extends Student {
+public class Slytherin extends HogwartsStudent {
     private int cunning;
     private int determination;
     private int ambition;
     private int ingenuity;
     private int thirstForPower;
 
-    private Slytherin(String name, String faculty, int magic, int transgression, int cunning, int determination,
-                             int ambition, int ingenuity, int thirstForPower) {
+    public Slytherin(String name, String faculty, int magic, int transgression, int cunning, int determination,
+                     int ambition, int ingenuity, int thirstForPower) {
         super(name, faculty, magic, transgression);
         this.cunning = cunning;
         this.determination = determination;
@@ -60,7 +60,7 @@ public class Slytherin extends Student {
     @Override
     public String toString() {
         return "SlytherinStudent{" +
-        " Студент: " + super.getName() + ' ' + "Факультет: " + super.getFaculty() +
+                " Студент: " + super.getName() + ' ' + "Факультет:" + super.getFaculty() +
                 ", Магия: " + super.getMagic() +
                 ", Трансгрессия: " + super.getTransgression() +
                 "cunning=" + cunning +
@@ -69,5 +69,19 @@ public class Slytherin extends Student {
                 ", ingenuity=" + ingenuity +
                 ", thirstForPower=" + thirstForPower +
                 '}';
+    }
+
+    private int getSlytherinTotalPower() {
+        return cunning + determination + ambition + ingenuity + thirstForPower;
+    }
+
+    public void compareTwoSlytherinStudents(Slytherin other) {
+        if (other.getSlytherinTotalPower() < this.getSlytherinTotalPower()) {
+            System.out.println("Ученик " + this.getName() + " сильнее, чем ученик " + other.getName());
+        } else if (other.getSlytherinTotalPower() > this.getSlytherinTotalPower()) {
+            System.out.println("Ученик " + other.getName() + " сильнее, чем ученик " + this.getName());
+        } else {
+            System.out.println("Ученики имеют равную силу");
+        }
     }
 }

@@ -1,11 +1,11 @@
 package Hogwarts;
 
-public class Hufflepuff extends Student {
+public class Hufflepuff extends HogwartsStudent {
     private int diligence;  // усердие
     private int loyalty;    // верность
     private int honesty;    // честность
 
-    private Hufflepuff(String name, String faculty, int magic, int transgression, int diligence, int loyalty, int honesty) {
+    public Hufflepuff(String name, String faculty, int magic, int transgression, int diligence, int loyalty, int honesty) {
         super(name, faculty, magic, transgression);
         this.diligence = diligence;
         this.loyalty = loyalty;
@@ -46,5 +46,18 @@ public class Hufflepuff extends Student {
                 ", loyalty=" + loyalty +
                 ", honesty=" + honesty +
                 ' ';
+    }
+    private int getHufflepuffTotalPower() {
+        return diligence + loyalty + honesty;
+    }
+
+    public void compareTwoHufflepuffStudents(Hufflepuff other) {
+        if (other.getHufflepuffTotalPower() < this.getHufflepuffTotalPower()) {
+            System.out.println("Ученик " + this.getName() + " сильнее, чем ученик " + other.getName());
+        } else if (other.getHufflepuffTotalPower() > this.getHufflepuffTotalPower()) {
+            System.out.println("Ученик " + other.getName() + " сильнее, чем ученик " + this.getName());
+        } else {
+            System.out.println("Ученики имеют равную силу");
+        }
     }
 }
