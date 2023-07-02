@@ -1,17 +1,15 @@
 package Servis;
 
-public class Car {
-    public class Car {
+public class Car extends TransportWithMotor {
 
-        public String modelName;
-        public int wheelsCount;
-
-        public void updateTyre() {
-            System.out.println("Меняем покрышку");
-        }
-
-        public void checkEngine() {
-            System.out.println("Проверяем двигатель");
-        }
+    public Car(String nameTransport, int numberWheels) {
+        super(nameTransport, numberWheels);
+    }
+        @Override
+    public void servis() {
+            for (int i = 0; i < getNumberWheels(); i++) {
+                updateTyre();
+            }
+            checkEngine();
     }
 }
