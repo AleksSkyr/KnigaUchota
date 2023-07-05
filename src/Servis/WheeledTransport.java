@@ -20,6 +20,9 @@ public abstract class WheeledTransport implements Transport {
     public void updateTyre() {
         System.out.println("Меняем покрышку");
     }
+    void checkEngine() {
+        System.out.println("Проверяем двигатель");
+    }
 
 }
 
