@@ -39,8 +39,13 @@ public class knigaUchota {
         maxSalary();
         System.out.println("Средная трата на зарплату: " + averageSalary());
         personalName();
+        System.out.println();
+        Employee min = minSalary();
+        System.out.println();
+        Employee max = maxSalary();
+        System.out.println("Сотрудник с максимальной зарплатой: " + max);
 
-
+        System.out.println("Сотрудник с минимальной зарплатой: " + min);
 
 
     }
@@ -60,7 +65,7 @@ public class knigaUchota {
                 max = employees[i];
             }
         }
-        System.out.println("Сотрудник с максимальной зарплатой: " + max);
+
         return max;
     }
 
@@ -72,7 +77,7 @@ public class knigaUchota {
                 min = employees[i];
             }
         }
-        System.out.println("Сотрудник с минимальной зарплатой: " + min);
+
         return min;
     }
 
